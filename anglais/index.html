@@ -53,6 +53,8 @@
   .opt.good{background:#d8f0df;border-color:#4caf6a}
   .opt.bad{background:var(--bad);border-color:#e05a5a}
   .why{font-size:14px;color:var(--mut);margin-top:6px}
+  .readtx{background:#fffdf5;border:1px solid #f1e6c8;border-radius:8px;padding:10px 14px;font-size:17px;line-height:1.7}
+  .readtx p{margin:4px 0}
   input.fi,textarea.fi{font-size:16px;padding:8px 10px;border:1px solid #cfd6e0;border-radius:8px;width:100%;max-width:420px;font-family:inherit}
   textarea.fi{max-width:100%;min-height:60px}
   .btn{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:10px 16px;font-size:15px;cursor:pointer;margin:6px 6px 0 0}
@@ -90,7 +92,7 @@
 <header>
   <a class="back" href="../">← Selfcours</a>
   <h1>Anglais oral et entretien d'embauche</h1>
-  <p>16 leçons vidéo en 3 modules, chacune avec un résumé, des phrases à écouter et à répéter, et un exercice. Ensuite : une simulation d'entretien, puis un quiz final avec certificat.</p>
+  <p>36 leçons en 5 modules : méthode et prononciation, expressions, entretien, grammaire et lectures à voix haute. Chaque leçon a un résumé, des phrases à écouter et à répéter, et un exercice. Ensuite : une simulation d'entretien, puis un quiz final avec certificat.</p>
   <div id="progtop"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
   <button class="hbtn" id="hbtn" onclick="gateQuiz()" style="display:none">Lancer le quiz final</button>
 </header>
@@ -101,7 +103,7 @@
   <ul>
     <li><strong>🔊</strong> lit la phrase avec une voix américaine, <strong>🐢</strong> la lit lentement, <strong>🎙️</strong> t'écoute et vérifie ce que tu as dit.</li>
     <li>Pour chaque leçon : regarde la vidéo, lis le résumé, répète les phrases clés à voix haute, puis fais l'exercice. La case « J'ai terminé ce cours » se débloque quand l'exercice est fini.</li>
-    <li>Le quiz final se débloque quand les 16 leçons sont cochées. Il faut 80 % pour obtenir le certificat.</li>
+    <li>Le quiz final se débloque quand toutes les leçons sont cochées. Il faut 80 % pour obtenir le certificat.</li>
   </ul>
   <div class="note"><strong>Sur iPhone :</strong> si tu n'entends pas la voix, désactive le mode silencieux (bouton sur le côté). Le micro fonctionne surtout dans Chrome et Safari récents ; la reconnaissance vocale passe par le service de ton navigateur. Sans micro, répète simplement à voix haute.</div>
   <div class="note"><strong>Routine conseillée (20 min par jour) :</strong> 5 min de shadowing (leçon 2), 10 min de leçon ou d'exercice, 5 min de « self-talk » : décris ta journée à voix haute en anglais.</div>
@@ -142,13 +144,15 @@
 </section>
 
 <section class="card" id="plan">
-  <h2>Plan sur 4 semaines</h2>
+  <h2>Plan sur 6 semaines</h2>
   <table>
     <tr><th>Semaine</th><th>Contenu</th></tr>
     <tr><td>1</td><td>Module 1 (leçons 1 à 4) : méthode, shadowing, prononciation, connected speech. Shadowing tous les jours.</td></tr>
     <tr><td>2</td><td>Module 2 (leçons 5 à 10) : expressions, phrasal verbs, idioms, small talk, erreurs des francophones, service client.</td></tr>
     <tr><td>3</td><td>Module 3 (leçons 11 à 16) : entretien. Écris et enregistre ton « Tell me about yourself ».</td></tr>
-    <tr><td>4</td><td>Simulation d'entretien chaque jour (3 questions), révision des phrases, puis quiz final et certificat.</td></tr>
+    <tr><td>4</td><td>Module 4, partie 1 (leçons 17 à 22) : présents, passé, present perfect, futur, questions, modaux. Lis le texte de chaque leçon à voix haute 2 fois.</td></tr>
+    <tr><td>5</td><td>Module 4, partie 2 (leçons 23 à 28) : conditionnels, articles, quantités, prépositions, comparatifs, discours rapporté.</td></tr>
+    <tr><td>6</td><td>Module 5 (leçons 29 à 36) : une lecture par jour, enregistrée. Simulation d'entretien chaque jour, puis quiz final et certificat.</td></tr>
   </table>
   <div class="note"><strong>Règle d'or :</strong> parler à voix haute chaque jour compte plus que regarder des vidéos. Enregistre-toi une fois par semaine pour entendre tes progrès.</div>
 </section>
@@ -429,6 +433,251 @@ const BANK=[
 ["▶ Écoute. Quel mot ?",["think","sink"],0,"","think"]
 ];
 
+MODS[4]="Module 4 · Grammaire pour parler correctement";
+MODS[5]="Module 5 · Lectures à voix haute";
+const T=(rows)=>'<table>'+rows.map((r,i)=>'<tr>'+r.map(c=>(i===0?'<th>':'<td>')+c+(i===0?'</th>':'</td>')).join('')+'</tr>').join('')+'</table>';
+L.push(
+{id:"g1",m:4,v:"W3HdjN3cLiM",t:"Present Simple and Present Continuous",ch:"Arnel's Everyday English",acc:"accent américain",
+sum:"Arnel compare les deux présents. Le <b>present simple</b> sert aux faits, habitudes, routines, verbes d'état et horaires fixes. Le <b>present continuous</b> sert aux actions en cours, aux situations temporaires, aux projets organisés et aux plaintes avec <i>always</i>. Les négations et questions se font avec <i>do/does</i> pour le simple et avec <i>be</i> pour le continu.",
+rule:T([["","Present simple","Present continuous"],["Forme","I work · he work<b>s</b>","I <b>am</b> working · he <b>is</b> working"],["Négation","I <b>don't</b> work · he <b>doesn't</b> work","I'm <b>not</b> working"],["Question","<b>Do</b> you work? <b>Does</b> he work?","<b>Are</b> you working?"],["Emploi","habitudes, faits, routines, horaires","action en cours, temporaire, projet organisé"]]),
+pts:["He / she / it : ajoute <b>-s</b> : <i>he works, she goes, it costs</i>.","Mots d'habitude → present simple : <i>always, usually, often, every day</i>.","Mots du moment → present continuous : <i>now, right now, at the moment, this week</i>.","Verbes d'état jamais en -ing : <i>know, like, want, need, believe, understand</i> → <i>I know</i>, pas <i>I'm knowing</i>.","Horaire fixe = present simple : <i>Our train leaves at eight tomorrow.</i>","Projet organisé = present continuous : <i>I'm meeting Sandra later.</i>"],
+ph:[["I always put milk in my coffee.","Je mets toujours du lait dans mon café."],["I'm helping my sister find a new apartment.","J'aide ma sœur à trouver un appartement."],["She works from home every day.","Elle travaille de chez elle tous les jours."],["Right now, I'm talking to a customer.","En ce moment, je parle à un client."],["Our train leaves at eight tomorrow.","Notre train part à huit heures demain."],["I'm meeting Sandra later.","Je vois Sandra plus tard."]],
+err:["Oublier le -s : <i>he work</i> → <i>he works</i>.","Mettre un verbe d'état en -ing : <i>I'm knowing</i> → <i>I know</i>."],
+ex:{i:"Complète et choisis, puis lis le texte à voix haute.",items:[
+ {t:"fill",q:"She ___ (work) from home every day.",a:["works"]},
+ {t:"fill",q:"Right now, I ___ (talk) to a customer.",a:["am talking","'m talking"],h:"be + verbe-ing"},
+ {t:"mcq",q:"I ___ coffee every morning.",o:["drink","am drinking","drinks"],a:0},
+ {t:"mcq",q:"Look! The truck ___ right now.",o:["is leaving","leaves","leave"],a:0},
+ {t:"mcq",q:"Quelle phrase est correcte ?",o:["I know the answer.","I'm knowing the answer.","I am know the answer."],a:0},
+ {t:"fill",q:"___ he speak French?",a:["does"]},
+ {t:"read",ti:"My Routine",tx:"My name is Alex. I work in customer service. Every morning, I wake up at six and I drink a big cup of coffee. I usually start work at seven. I answer calls, chats and emails all day. Right now, I'm learning English because I want a better job. This week, I'm practicing every evening. My teacher says I'm getting better!"}]}},
+{id:"g2",m:4,v:"MI3S3kdkofo",t:"Simple Past",ch:"Ellii (formerly ESL Library)",acc:"accent américain",
+sum:"Le <b>simple past</b> décrit une action terminée à un moment passé. Les verbes réguliers prennent <b>-ed</b> à toutes les personnes ; les irréguliers changent de forme. <i>Be</i> est le seul verbe qui change selon le sujet : <i>was</i> ou <i>were</i>.",
+rule:T([["","Exemple"],["Régulier","work → work<b>ed</b> · call → call<b>ed</b> · stop → sto<b>pped</b>"],["Irrégulier","go → <b>went</b> · have → <b>had</b> · make → <b>made</b> · get → <b>got</b>"],["Be","I / he / she / it <b>was</b> · you / we / they <b>were</b>"],["Négation","I <b>didn't</b> work (verbe à la base)"],["Question","<b>Did</b> you work?"]]),
+pts:["Action finie à un moment précis : <i>yesterday, last week, two years ago, in 2023</i>.","<b>-ed</b> se prononce « t » (<i>worked</i>), « d » (<i>called</i>) ou « id » (<i>wanted</i>).","20 irréguliers à connaître par cœur : <i>be-was, go-went, have-had, do-did, make-made, get-got, take-took, see-saw, say-said, tell-told, come-came, give-gave, find-found, think-thought, buy-bought, sell-sold, speak-spoke, leave-left, send-sent, pay-paid</i>.","Après <i>did / didn't</i>, le verbe revient à la base : <i>I didn't go</i>.","<b>ago</b> = il y a : <i>two years ago</i>.","À l'oral, le simple past sert à raconter : expériences, histoires STAR en entretien."],
+ph:[["I watched a movie yesterday.","J'ai regardé un film hier."],["You went to Paris two years ago.","Tu es allé à Paris il y a deux ans."],["My new shoes were expensive.","Mes nouvelles chaussures étaient chères."],["I didn't go to work last Monday.","Je ne suis pas allé travailler lundi dernier."],["Did you call the broker?","As-tu appelé le broker ?"],["We closed a big deal last month.","Nous avons conclu une grosse vente le mois dernier."]],
+err:["<i>I didn't went</i> → <i>I didn't go</i>.","<i>I goed / I buyed</i> → <i>I went / I bought</i>."],
+ex:{i:"Mets les verbes au passé, puis lis le texte à voix haute.",items:[
+ {t:"fill",q:"Yesterday I ___ (call) the client.",a:["called"]},
+ {t:"fill",q:"Last year, we ___ (go) to Miami.",a:["went"]},
+ {t:"fill",q:"She ___ (be) tired after work.",a:["was"]},
+ {t:"fill",q:"I ___ (buy) a new laptop two weeks ago.",a:["bought"]},
+ {t:"mcq",q:"I didn't ___ the email.",o:["send","sent","sended"],a:0},
+ {t:"mcq",q:"___ you finish the report?",o:["Did","Do","Were"],a:0},
+ {t:"read",ti:"My First Job",tx:"I got my first job in 2021. I worked in a call center for a telecom company. On my first day, I was very nervous. I answered my first call and I made a small mistake, but my supervisor helped me. After a few weeks, I felt more confident. I learned how to stay calm with angry customers. That job taught me a lot."}]}},
+{id:"g3",m:4,v:"vM5trdispow",t:"Past Simple or Present Perfect?",ch:"Arnel's Everyday English",acc:"accent américain",
+sum:"Arnel compare le past simple (période finie) et le <b>present perfect</b> (<i>have/has</i> + participe passé) pour une période pas terminée, une expérience de vie ou un résultat présent. <i>For</i> indique une durée, <i>since</i> un point de départ. Il rappelle que l'anglais américain utilise souvent le past simple là où l'anglais britannique met un present perfect.",
+rule:T([["","Forme et emploi"],["Present perfect","have / has + participe passé : I <b>have worked</b>, she <b>has worked</b>"],["Négation / question","I <b>haven't</b> finished · <b>Have</b> you ever…?"],["Past simple","moment fini et précis : <i>yesterday, in 2022, last week</i>"],["Present perfect","période pas finie, expérience, résultat : <i>today, this week, ever, never, already, yet, for, since</i>"]]),
+pts:["Moment fini → past simple : <i>I ate a sandwich for lunch.</i>","Période pas finie → present perfect : <i>I've eaten three sandwiches today.</i>","Expérience : <i>Have you ever worked in sales? — Yes, I have.</i>","<b>for</b> + durée, <b>since</b> + point de départ : <i>for 10 years / since 2015</i>.","<i>already</i> = déjà · <i>yet</i> = pas encore / déjà ? · <i>just</i> = venir de.","Piège : « je travaille ici depuis 3 ans » = <i>I've worked here for 3 years</i>."],
+ph:[["I ate a sandwich for lunch.","J'ai mangé un sandwich ce midi."],["I've eaten three sandwiches today.","J'ai mangé trois sandwichs aujourd'hui."],["I've lived here for ten years.","J'habite ici depuis dix ans."],["Kevin has already booked the meeting room.","Kevin a déjà réservé la salle."],["Have you ever worked with international clients?","As-tu déjà travaillé avec des clients internationaux ?"],["I haven't heard back from them yet.","Ils ne m'ont pas encore répondu."]],
+err:["<i>I work here since 2020</i> → <i>I've worked here since 2020</i>.","Mettre un moment précis avec le present perfect : <i>I've seen him yesterday</i> → <i>I saw him yesterday</i>."],
+ex:{i:"Choisis le bon temps, puis lis le texte à voix haute.",items:[
+ {t:"mcq",q:"I ___ to Miami in 2022.",o:["went","have gone","have went"],a:0},
+ {t:"mcq",q:"I ___ in customer service for five years. (j'y suis toujours)",o:["have worked","worked","work"],a:0},
+ {t:"mcq",q:"Have you ever ___ a truck?",o:["driven","drove","drive"],a:0},
+ {t:"fill",q:"I've lived here ___ 2019.",a:["since"]},
+ {t:"fill",q:"I've lived here ___ three years.",a:["for"]},
+ {t:"mcq",q:"She hasn't called me ___.",o:["yet","already","ago"],a:0},
+ {t:"read",ti:"My Experience",tx:"I have worked in customer service for more than four years. I have helped thousands of customers by phone, chat and email. In 2022, I got a promotion to an analyst role. Since then, I have learned how to read data and improve our processes. I have never been afraid of difficult calls. I have always tried to find a solution."}]}},
+{id:"g4",m:4,v:"CI0Kr4e4vzI",t:"Will vs Going To: The Future",ch:"7ESL Learning English",acc:"accent américain",
+sum:"<i>Will</i> sert pour une décision prise sur le moment, une prédiction basée sur une opinion et un fait futur. <i>Going to</i> sert pour un plan déjà décidé et une prédiction basée sur une preuve visible. Pour certaines prédictions générales, les deux sont possibles.",
+rule:T([["Forme","Emploi"],["will + base","décision immédiate, promesse, offre, opinion : <i>I'll call you back.</i>"],["be going to + base","plan décidé, preuve visible : <i>I'm going to apply.</i> <i>It's going to rain.</i>"],["be + -ing","rendez-vous organisé : <i>I'm meeting the recruiter at 3.</i>"],["Négation","<i>won't</i> = will not · <i>I'm not going to</i>"]]),
+pts:["Décision sur le moment : <i>The phone is ringing. I'll get it!</i>","Promesse ou offre : <i>I'll send it today. I'll help you.</i>","Opinion : <i>I think</i> + will : <i>I think it will work.</i>","Plan déjà décidé : <i>I'm going to start a new job next month.</i>","À l'oral, <i>going to</i> devient souvent <i>gonna</i> (leçon 4).","Horaire officiel = present simple : <i>The meeting starts at 9.</i>"],
+ph:[["I'll have the salad and the fish.","Je vais prendre la salade et le poisson."],["I'm going to visit my aunt next Friday.","Je vais rendre visite à ma tante vendredi prochain."],["I think our team will win the game.","Je pense que notre équipe va gagner."],["Look at those clouds. It's going to rain.","Regarde ces nuages. Il va pleuvoir."],["Don't worry, I'll call you back in five minutes.","Pas d'inquiétude, je te rappelle dans cinq minutes."],["I'm meeting the recruiter tomorrow at three.","Je vois le recruteur demain à trois heures."]],
+err:["<i>I will to go</i> → <i>I will go</i>.","<i>Tomorrow I go to the interview</i> → <i>Tomorrow I'm going to the interview</i>."],
+ex:{i:"Choisis la bonne forme du futur, puis lis le texte à voix haute.",items:[
+ {t:"mcq",q:"Le téléphone sonne :",o:["I'll get it!","I'm going to get it next week.","I get it tomorrow."],a:0},
+ {t:"mcq",q:"C'est décidé depuis hier :",o:["I'm going to apply for the job.","I'll apply, I just decided.","I apply for the job yesterday."],a:0},
+ {t:"mcq",q:"Look at the traffic! We ___ late.",o:["are going to be","will to be","be"],a:0},
+ {t:"fill",q:"I promise I ___ send it today.",a:["will","'ll"]},
+ {t:"fill",q:"She ___ come tomorrow. (négation de will)",a:["won't","will not"]},
+ {t:"read",ti:"My Plans",tx:"Next month, I'm going to start a new job as a dispatcher. I'm going to work with truck drivers and brokers. I think it will be difficult at first, but I'll learn fast. Tomorrow, I'm meeting my new manager. I'm going to ask a lot of questions. In five years, I hope I will have my own dispatch company."}]}},
+{id:"g5",m:4,v:"OF2NwDY62iY",t:"Do, Does and Did: Questions and Negatives",ch:"ChetChat",acc:"accent américain",
+sum:"Au présent, <i>does</i> va avec he, she, it et <i>do</i> avec I, you, we, they. Au passé, <i>did</i> sert pour tous les sujets. Après <i>do / does / did</i>, en question comme en négation, le verbe principal reste à sa forme de base.",
+rule:T([["","Forme"],["Présent","<b>Do</b> I / you / we / they work? · <b>Does</b> he / she / it work?"],["Passé","<b>Did</b> you / he work?"],["Négation","I <b>don't</b> · he <b>doesn't</b> · I <b>didn't</b> + base"],["Avec be","<b>Are</b> you ready? <b>Is</b> she here? <b>Was</b> it late? (pas de do)"],["Mots interrogatifs","What / Where / When / Why / Who / How / How much / How many / How long + do / does / did + sujet + verbe"]]),
+pts:["Après <i>does</i> : pas de -s : <i>Does he work?</i>, pas <i>Does he works?</i>","Avec <i>be</i> et les modaux, pas de <i>do</i> : <i>Are you ready? Can you help?</i>","Ordre : mot interrogatif + auxiliaire + sujet + verbe : <i>Where do you live?</i>","Question sur le sujet, pas de <i>do</i> : <i>Who called you?</i>","Questions de dispatch : <i>What's the rate? When is the pickup? How many miles is it?</i>","Pour confirmer : <i>The pickup is at eight, right?</i>"],
+ph:[["Jack does his homework every night.","Jack fait ses devoirs tous les soirs."],["Sarah and Jane do not like cats.","Sarah et Jane n'aiment pas les chats."],["Did he eat bread?","A-t-il mangé du pain ?"],["Where do you live?","Où habites-tu ?"],["How long have you worked there?","Depuis combien de temps travailles-tu là-bas ?"],["What time is the pickup?","À quelle heure est le chargement ?"]],
+err:["<i>Where you work?</i> → <i>Where do you work?</i>","<i>He don't work</i> → <i>He doesn't work</i>."],
+ex:{i:"Construis des questions et des négations, puis lis le dialogue à voix haute.",items:[
+ {t:"mcq",q:"___ she speak English?",o:["Does","Do","Is"],a:0},
+ {t:"mcq",q:"He doesn't ___ on weekends.",o:["work","works","working"],a:0},
+ {t:"fill",q:"___ you call the client yesterday?",a:["did"]},
+ {t:"mcq",q:"Quelle question est correcte ?",o:["Where do you work?","Where you work?","Where does you work?"],a:0},
+ {t:"fill",q:"How many miles ___ it? (be)",a:["is"]},
+ {t:"mcq",q:"Who ___ you this morning?",o:["called","did call","does call"],a:0,w:"Question sur le sujet : pas de did."},
+ {t:"read",ti:"Calling a Broker",tx:"Dispatcher: Hi, I'm calling about your load from Dallas to Atlanta. Is it still available?\nBroker: Yes, it is.\nDispatcher: Great. What's the weight?\nBroker: Forty-two thousand pounds.\nDispatcher: When is the pickup?\nBroker: Tomorrow at eight.\nDispatcher: Does it need a reefer?\nBroker: No, a dry van is fine.\nDispatcher: How much does it pay?\nBroker: Two thousand four hundred dollars."}]}},
+{id:"g6",m:4,v:"36wG9pSYu7Q",t:"Modal Verbs: Can, Could, May, Might, Must, Should, Would",ch:"English with Lucy",acc:"accent britannique",
+sum:"Lucy explique les verbes modaux : une seule forme, jamais de -s, -ed ou -ing, et suivis d'un verbe à la base sans <i>to</i>. Chacun a un sens : capacité (can, could), possibilité (may, might, could), déduction (must, can't), obligation et conseil (must, should), politesse et hypothèse (would).",
+rule:T([["Modal","Sens","Exemple"],["can / can't","capacité, permission","I can speak Spanish."],["could","demande polie, possibilité, capacité passée","Could you repeat that?"],["may / might","possibilité","I might bake a cake later."],["must","obligation forte, déduction sûre","You must sign the rate con."],["have to","obligation (règle extérieure)","I have to work on Saturday."],["should","conseil","You should check the MC number."],["would","politesse, hypothèse","Would you like a coffee?"]]),
+pts:["Modal + base, sans <i>to</i> : <i>I can speak</i>, pas <i>I can to speak</i>.","Jamais de -s : <i>he can</i>, <i>she should</i>.","Demande polie : <i>Could you send me the rate con?</i> · <i>Would you mind repeating that?</i>","Conseil : <i>You should…</i> · <i>If I were you, I'd…</i>","<i>You don't have to</i> = pas obligé ≠ <i>You mustn't</i> = interdit.","Possibilité : <i>It might rain. The load may be ready at two.</i>"],
+ph:[["I can speak English, French and Haitian Creole.","Je parle anglais, français et créole haïtien."],["Could you repeat that, please?","Pourriez-vous répéter, s'il vous plaît ?"],["You should always wear your seat belt.","Tu devrais toujours mettre ta ceinture."],["I might work late tonight.","Je vais peut-être travailler tard ce soir."],["Would you like a coffee?","Voulez-vous un café ?"],["If I were you, I'd call the broker first.","À ta place, j'appellerais d'abord le broker."]],
+err:["<i>I can to help you</i> → <i>I can help you</i>.","Confondre <i>you don't have to</i> (pas obligé) et <i>you mustn't</i> (interdit)."],
+ex:{i:"Choisis le bon modal, puis lis le texte à voix haute.",items:[
+ {t:"mcq",q:"Demande polie :",o:["Could you send me the rate confirmation?","You send me the rate confirmation.","Can to send me the rate confirmation?"],a:0},
+ {t:"mcq",q:"He can ___ Spanish.",o:["speak","speaks","to speak"],a:0},
+ {t:"mcq",q:"You look tired. You ___ rest.",o:["should","must to","could to"],a:0},
+ {t:"mcq",q:"Tu n'es pas obligé de venir.",o:["You don't have to come.","You mustn't come.","You shouldn't to come."],a:0},
+ {t:"fill",q:"Drivers ___ take a break after eight hours of driving. (obligation forte)",a:["must","have to"]},
+ {t:"read",ti:"Advice for a New Dispatcher",tx:"If you want to become a dispatcher, you should learn the basic terms first. You must always read the rate confirmation before the truck moves. You can find loads on DAT, but you should also call brokers directly. You might feel nervous at first, and that's normal. Could you make twenty calls a day? If you can, you will learn very fast."}]}},
+{id:"g7",m:4,v:"4H3-2smRJJY",t:"All Conditionals: 0, 1, 2, 3 and Mixed",ch:"Arnel's Everyday English",acc:"accent américain",
+sum:"Arnel explique toutes les phrases avec <i>if</i>. Le conditionnel 0 exprime une vérité générale, le 1 une situation future réaliste, le 2 une situation imaginaire au présent, le 3 une situation imaginaire au passé. On met une virgule quand <i>if</i> est au début ; <i>unless</i> = <i>if not</i> ; on dit <i>if I were</i> à toutes les personnes.",
+rule:T([["Type","Forme","Exemple"],["0 · toujours vrai","If + présent, présent","If I drink coffee late, I don't sleep."],["1 · futur réel","If + présent, will + base","If we don't leave soon, we'll miss the train."],["2 · imaginaire présent","If + passé, would + base","If I won the lottery, I would buy a house."],["3 · imaginaire passé","If + had + participe, would have + participe","If I had studied, I would have passed."]]),
+pts:["Jamais <i>will</i> juste après <i>if</i> : <i>If he calls, I'll answer.</i>","Virgule si <i>if</i> est en premier ; pas de virgule s'il est au milieu.","<i>If I were you, I'd…</i> : la formule du conseil.","<i>unless</i> = <i>if… not</i> : <i>Unless they pay detention, we won't wait.</i>","<i>when</i> = c'est sûr que ça arrivera ; <i>if</i> = ce n'est pas sûr.","En entretien : <i>What would you do if…?</i> → <i>I would…</i>"],
+ph:[["If I drink coffee after 3 p.m., I don't sleep at night.","Si je bois du café après 15 h, je ne dors pas."],["If we don't leave soon, we'll miss our train.","Si on ne part pas bientôt, on va rater le train."],["If I won the lottery, I would buy a mansion.","Si je gagnais au loto, j'achèterais un manoir."],["If I had studied harder, I would have passed my exam.","Si j'avais plus étudié, j'aurais réussi l'examen."],["If I were you, I'd take the job.","À ta place, je prendrais le poste."],["Unless the broker pays detention, we won't wait.","Si le broker ne paie pas l'attente, on n'attendra pas."]],
+err:["<i>If it will rain</i> → <i>If it rains</i>.","<i>If I would have known</i> → <i>If I had known</i>."],
+ex:{i:"Choisis la bonne forme, puis lis l'échange d'entretien à voix haute.",items:[
+ {t:"mcq",q:"If it rains, I ___ stay home.",o:["will","would","would have"],a:0},
+ {t:"mcq",q:"If I ___ rich, I would travel the world.",o:["were","am","will be"],a:0},
+ {t:"mcq",q:"If I ___ earlier, I would have caught the train.",o:["had left","left","would leave"],a:0},
+ {t:"mcq",q:"Quelle phrase est correcte ?",o:["If he calls, I'll answer.","If he will call, I'll answer.","If he would call, I answer."],a:0},
+ {t:"fill",q:"If you heat ice, it ___ (melt).",a:["melts"]},
+ {t:"read",ti:"What Would You Do?",tx:"Interviewer: What would you do if a customer was very angry?\nMe: If a customer was angry, I would stay calm and listen first. I would repeat the problem to show that I understand. If I couldn't solve it myself, I would ask my supervisor for help. And if the customer calls back later, I'll make sure they talk to the same person."}]}},
+{id:"g8",m:4,v:"cvwhip4dw3Y",t:"Articles: A, An or The?",ch:"Arnel's Everyday English",acc:"accent américain",
+sum:"<i>A</i> va devant un son consonne et <i>an</i> devant un son voyelle (c'est le son qui compte, pas la lettre). <i>The</i> désigne quelque chose de précis, déjà mentionné ou unique. Pas d'article pour les pluriels et les indénombrables pris en général, ni pour la plupart des villes, pays et rues.",
+rule:T([["Article","Quand","Exemple"],["a","son consonne, 1re mention, métier","a truck · a university · I'm a dispatcher"],["an","son voyelle","an apple · an hour · an email"],["the","précis, déjà mentionné, unique, superlatif","the driver I called · the best · the United States"],["(rien)","général, pluriel ou indénombrable, villes, pays","Life is good. · Trucks are expensive. · in Atlanta"]]),
+pts:["C'est le son qui compte : <i>an hour</i> (h muet), <i>a university</i> (son « you »).","Métier : <i>I'm a dispatcher</i> (jamais <i>I'm dispatcher</i>).","Première mention <i>a</i>, ensuite <i>the</i> : <i>I saw a truck. The truck was red.</i>","Sens général : pas d'article : <i>Life is beautiful. Money is important.</i>","<i>the United States, the USA</i>, mais <i>Haiti, France, Atlanta</i>.","Sans article : <i>at work, at home, go to work, go to bed</i>."],
+ph:[["I have an apple.","J'ai une pomme."],["I go to a university.","Je vais à l'université."],["The seagull finished the hamburger in about two minutes.","La mouette a fini le hamburger en deux minutes."],["I want to climb Mount Everest one day.","Je veux gravir l'Everest un jour."],["I'm a customer service agent.","Je suis agent du service client."],["It takes an hour to get to the warehouse.","Il faut une heure pour aller à l'entrepôt."]],
+err:["<i>I'm dispatcher</i> → <i>I'm a dispatcher</i>.","<i>The life is hard</i> → <i>Life is hard</i>."],
+ex:{i:"Choisis l'article, puis lis le texte à voix haute.",items:[
+ {t:"fill",q:"I'm ___ dispatcher.",a:["a"]},
+ {t:"fill",q:"It takes ___ hour.",a:["an"]},
+ {t:"mcq",q:"___ is beautiful. (la vie en général)",o:["Life","The life","A life"],a:0},
+ {t:"mcq",q:"I live in ___ United States.",o:["the","a","(rien)"],a:0},
+ {t:"mcq",q:"I saw a truck. ___ truck was red.",o:["The","A","An"],a:0},
+ {t:"mcq",q:"She is ___ honest person.",o:["an","a","the"],a:0,w:"h muet : son voyelle."},
+ {t:"read",ti:"A Driver and a Load",tx:"Yesterday, a driver called me. The driver was in Texas with an empty truck. I found a load on a load board. The load was in Houston, about an hour away. The broker offered a good rate, and the driver accepted. Life as a dispatcher is busy, but I love the job."}]}},
+{id:"g9",m:4,v:"uQIuZ6YJ760",t:"Much, Many or A Lot Of? Countable and Uncountable Nouns",ch:"English with Lucy",acc:"accent britannique",
+sum:"<i>Much</i> va avec les noms indénombrables, surtout en question et en négation. <i>Many</i> va avec les noms dénombrables au pluriel. <i>A lot of</i> et <i>lots of</i> vont avec les deux et sont plus naturels dans les phrases affirmatives.",
+rule:T([["","Dénombrable (truck, call, mile)","Indénombrable (money, time, traffic)"],["beaucoup","many · a lot of","much (question/négation) · a lot of"],["un peu / quelques","a few","a little"],["combien ?","How many…?","How much…?"],["un / une","a truck","a piece of advice / information"]]),
+pts:["Indénombrables courants : <i>information, advice, money, work, news, traffic, equipment, feedback, luggage, furniture</i>.","Pas de pluriel ni de <i>a</i> : <i>some information</i>, <i>a piece of advice</i>.","<i>some</i> en phrase affirmative, <i>any</i> en question et négation : <i>Do you have any questions?</i>","<i>a few</i> = quelques (positif) ; <i>few</i> = peu (négatif).","Dans une phrase affirmative, <i>a lot of</i> sonne plus naturel que <i>much</i>.","<i>How much is it?</i> = combien ça coûte ?"],
+ph:[["I don't have much water.","Je n'ai pas beaucoup d'eau."],["Do you have much homework?","As-tu beaucoup de devoirs ?"],["I have many apples.","J'ai beaucoup de pommes."],["I have a lot of water.","J'ai beaucoup d'eau."],["How many loads did you book today?","Combien de chargements as-tu réservés aujourd'hui ?"],["Can I give you a piece of advice?","Je peux te donner un conseil ?"]],
+err:["<i>informations, advices, a news</i> → <i>information, advice, news</i>.","<i>How much trucks?</i> → <i>How many trucks?</i>"],
+ex:{i:"Choisis le bon mot, puis lis le texte à voix haute.",items:[
+ {t:"mcq",q:"How ___ money do you need?",o:["much","many","a few"],a:0},
+ {t:"mcq",q:"How ___ trucks do you dispatch?",o:["many","much","a little"],a:0},
+ {t:"mcq",q:"There is ___ traffic today.",o:["a lot of","many","a few"],a:0},
+ {t:"mcq",q:"Quelle phrase est correcte ?",o:["I need some information.","I need some informations.","I need an information."],a:0},
+ {t:"fill",q:"I have a ___ questions. (quelques)",a:["few"]},
+ {t:"fill",q:"Can you give me some ___? (des conseils)",a:["advice"]},
+ {t:"read",ti:"A Busy Monday",tx:"This morning, there was a lot of traffic in Chicago. My driver didn't have much time, so I called the receiver. They gave me some information about the dock. We had a few problems, but not many. I gave the driver a piece of advice: always call before you arrive. In the end, we delivered on time and made good money."}]}},
+{id:"g10",m:4,v:"92XBCRYZ1S8",t:"In, On, At: Prepositions of Time and Place",ch:"English with Lucy",acc:"accent britannique",
+sum:"Pour le temps comme pour le lieu, on va du plus général (<i>in</i>) au plus précis (<i>at</i>), en passant par <i>on</i>. Attention : la vidéo dit « I arrived to work on time » ; en anglais correct, on dit <b>I arrived at work on time</b>.",
+rule:T([["","Temps","Lieu"],["in","mois, années, saisons, parties du jour, « dans X temps » : in May, in 2024, in the morning, in two hours","pays, villes, espace fermé, voiture : in Haiti, in Atlanta, in the office, in the car"],["on","jours, dates : on Monday, on May 5th, on time","rue, surface, étage, bus / train / avion : on Main Street, on the second floor, on the bus"],["at","heure précise, night, noon : at 8 a.m., at night","point précis, adresse : at work, at home, at the warehouse, at 25 Main Street"]]),
+pts:["<i>in the morning / in the afternoon / in the evening</i>, mais <i>at night</i>.","En américain : <i>on the weekend</i> (britannique : <i>at the weekend</i>).","<i>in the car / in a taxi</i>, mais <i>on the bus / on the train / on the plane</i>.","<i>arrive in</i> + ville ou pays, <i>arrive at</i> + lieu précis. Jamais <i>arrive to</i>.","<i>on time</i> = à l'heure ; <i>in time</i> = à temps.","Dispatch : <i>The pickup is on Monday at 8 a.m. in Memphis.</i>"],
+ph:[["I was born in 1994.","Je suis né en 1994."],["I arrived at work on time.","Je suis arrivé au travail à l'heure."],["I stayed in Jakarta.","Je suis resté à Jakarta."],["I was on the radio last week.","J'étais à la radio la semaine dernière."],["The pickup is on Monday at 8 a.m.","Le chargement est lundi à 8 h."],["The driver is at the warehouse on Main Street.","Le chauffeur est à l'entrepôt sur Main Street."]],
+err:["<i>arrive to work</i> → <i>arrive at work</i>.","<i>in Monday</i> → <i>on Monday</i> ; <i>at 2024</i> → <i>in 2024</i>."],
+ex:{i:"Complète avec in, on ou at, puis lis le texte à voix haute.",items:[
+ {t:"fill",q:"The pickup is ___ Monday.",a:["on"]},
+ {t:"fill",q:"The pickup is at 8 a.m., not ___ 9 a.m.",a:["at"]},
+ {t:"fill",q:"I was born ___ 1994.",a:["in"]},
+ {t:"fill",q:"He lives ___ Atlanta.",a:["in"]},
+ {t:"mcq",q:"I'm ___ work right now.",o:["at","in","on"],a:0},
+ {t:"mcq",q:"We often work ___ night.",o:["at","in","on"],a:0},
+ {t:"mcq",q:"Get ___ the bus.",o:["on","in","at"],a:0},
+ {t:"read",ti:"The Delivery Schedule",tx:"The pickup is on Tuesday at 7 a.m. in Memphis. The warehouse is on Lamar Avenue. The driver must arrive at the gate fifteen minutes early. The delivery is in Atlanta on Wednesday morning. If there is a problem, call me at the office. I work from 6 a.m. to 4 p.m., and I'm available on the weekend too."}]}},
+{id:"g11",m:4,v:"wXiD0FdON7k",t:"Comparatives and Superlatives",ch:"Ellii (formerly ESL Library)",acc:"accent américain",
+sum:"La vidéo explique les comparatifs : <b>-er</b> pour les adjectifs courts (en doublant la consonne quand il faut), <b>-ier</b> pour ceux en -y, <b>more</b> pour les adjectifs longs, et les irréguliers <i>good-better, bad-worse, far-farther</i>, avec la structure <i>… than …</i>. Le superlatif (<i>the biggest, the most…</i>) n'est pas dans la vidéo : il est expliqué ci-dessous.",
+rule:T([["Adjectif","Comparatif","Superlatif"],["court : tall, big","tall<b>er</b>, big<b>ger</b> than","the tall<b>est</b>, the big<b>gest</b>"],["en -y : easy, busy","eas<b>ier</b>, bus<b>ier</b> than","the eas<b>iest</b>, the bus<b>iest</b>"],["long : expensive, popular","<b>more</b> expensive than","<b>the most</b> expensive"],["irrégulier","good → better · bad → worse · far → farther","the best · the worst · the farthest"],["égalité","as tall <b>as</b> · not as popular <b>as</b>",""]]),
+pts:["Structure : sujet + verbe + comparatif + <b>than</b> : <i>She is taller than him.</i>","Jamais <i>more bigger</i> : c'est -er OU more.","<i>good → better → the best</i> (jamais <i>gooder</i>).","Superlatif + present perfect : <i>It's the best job I've ever had.</i>","Égalité : <i>as … as</i> (jamais <i>as … than</i>).","Utile pour comparer deux chargements, deux offres, deux load boards."],
+ph:[["She is taller than him.","Elle est plus grande que lui."],["This painting is more beautiful than that painting.","Ce tableau est plus beau que celui-là."],["The blue house is bigger than the yellow house.","La maison bleue est plus grande que la jaune."],["This load pays better than the other one.","Ce chargement paie mieux que l'autre."],["It's the best job I've ever had.","C'est le meilleur travail que j'aie jamais eu."],["Truckstop is not as popular as DAT.","Truckstop n'est pas aussi populaire que DAT."]],
+err:["<i>more cheaper</i> → <i>cheaper</i>.","<i>as good than</i> → <i>as good as</i>."],
+ex:{i:"Forme les comparatifs et superlatifs, puis lis le texte à voix haute.",items:[
+ {t:"fill",q:"This load is ___ (cheap) than that one.",a:["cheaper"]},
+ {t:"fill",q:"DAT is ___ (popular) than 123Loadboard.",a:["more popular"]},
+ {t:"fill",q:"Houston is ___ (big) than Dallas.",a:["bigger"]},
+ {t:"mcq",q:"This is the ___ day of my life.",o:["best","better","goodest"],a:0},
+ {t:"mcq",q:"My English is ___ than last year.",o:["better","more good","gooder"],a:0},
+ {t:"mcq",q:"Égalité :",o:["He is as tall as me.","He is as tall than me.","He is so tall than me."],a:0},
+ {t:"read",ti:"Two Loads",tx:"I have two loads for my driver. The first load pays more money, but it is farther away. The second load is closer and easier, but it pays less. The first one has more deadhead miles, so the real rate per mile is lower. In the end, the second load is the better choice. It's not as exciting as the big load, but it's the smartest option."}]}},
+{id:"g12",m:4,v:"eplQBhE0-Hg",t:"Reported Speech",ch:"English with Lucy",acc:"accent britannique",
+sum:"Pour rapporter ce que quelqu'un a dit, on utilise <i>say</i> ou <i>tell</i> (<i>tell</i> + la personne), on change les pronoms et on recule le temps d'un cran (<i>backshift</i>) : <i>will</i> devient <i>would</i>, le présent devient passé. Si c'est toujours vrai, on peut garder le présent. Très utile pour rapporter un appel au chauffeur ou au manager.",
+rule:T([["Discours direct","Discours rapporté"],["« I <b>am</b> busy. »","She said she <b>was</b> busy."],["« I <b>will</b> call you. »","He said he <b>would</b> call me."],["« I <b>can</b> help. »","She said she <b>could</b> help."],["« I <b>sent</b> it. »","He said he <b>had sent</b> it."],["« Where <b>do</b> you live? »","She asked me where I <b>lived</b>."],["« <b>Call</b> me back. »","He told me <b>to call</b> him back."]]),
+pts:["<b>say</b> something · <b>tell someone</b> something : <i>He told me that…</i>, jamais <i>He said me</i>.","<i>that</i> est facultatif : <i>She said (that) she was ready.</i>","Question oui / non → <i>asked if</i> : <i>She asked if I could start Monday.</i>","Question avec mot interrogatif → pas d'inversion : <i>He asked where I lived.</i>","Ordre → <i>told me to + base</i>.","Toujours vrai → on peut garder le présent : <i>Lucy said that she loves her parents.</i>"],
+ph:[["She said that she liked chocolate.","Elle a dit qu'elle aimait le chocolat."],["They told us that they had eaten breakfast.","Ils nous ont dit qu'ils avaient pris le petit-déjeuner."],["The broker said the load was ready.","Le broker a dit que le chargement était prêt."],["The driver told me he would arrive at five.","Le chauffeur m'a dit qu'il arriverait à cinq heures."],["She asked if I could start on Monday.","Elle a demandé si je pouvais commencer lundi."],["He told me to call him back.","Il m'a dit de le rappeler."]],
+err:["<i>He said me</i> → <i>He told me</i> / <i>He said to me</i>.","<i>She asked where did I live</i> → <i>She asked where I lived</i>."],
+ex:{i:"Transforme au discours rapporté, puis lis le message à voix haute.",items:[
+ {t:"mcq",q:"He ___ me that he was tired.",o:["told","said","said to"],a:0},
+ {t:"mcq",q:"« I am busy. » → She said she ___ busy.",o:["was","is being","be"],a:0},
+ {t:"mcq",q:"« I will call you. » → He said he ___ call me.",o:["would","will","wills"],a:0},
+ {t:"mcq",q:"« Where do you live? » → She asked me where I ___.",o:["lived","did live","do live"],a:0},
+ {t:"mcq",q:"« Call me back. » → He told me ___ him back.",o:["to call","call","calling"],a:0},
+ {t:"read",ti:"Message to the Driver",tx:"Hi Mike, I just spoke with the broker. She said that the load was ready. She told me that the receiver closes at five. She asked if you could arrive before four. I told her that you would be there by three thirty. She also said that they would pay detention after two hours."}]}}
+);
+
+const R=(id,ti,lvl,intro,voc,tx,qs,tips)=>({id,m:5,v:null,t:ti,ch:"Lecture à voix haute",acc:"niveau "+lvl,
+ sum:intro,pts:voc.map(v=>'<i>'+v[0]+'</i> = '+v[1]).concat(tips||[]),
+ ph:tx.split('\n').map(l=>l.replace(/^[A-Z][a-zA-Z ]{0,14}:\s*/,'')).join(' ').replace(/([.!?])\s+/g,'$1\n').split('\n').filter(s=>s.split(' ').length>=5).slice(0,5).map(s=>[s,'']),
+ err:["Lire mot par mot : regroupe les mots par idée et ne coupe pas ta voix (leçon 4).","Accélérer : lis lentement et clairement, la vitesse viendra ensuite."],
+ ex:{i:"1) Écoute tout le texte. 2) Lis-le phrase par phrase avec 🔊 puis 🎙️. 3) Lis tout le texte à voix haute d'une traite. 4) Réponds aux questions.",items:[{t:"read",ti:ti,tx:tx}].concat(qs.map(q=>({t:"mcq",q:q[0],o:q[1],a:0})))}});
+L.push(
+R("r1","A New Day","A2","Une journée ordinaire racontée au présent simple. Idéal pour commencer : phrases courtes et vocabulaire du quotidien.",
+ [["wake up","se réveiller"],["take a shower","prendre une douche"],["commute","trajet domicile-travail"],["get ready","se préparer"]],
+ "Every day, I wake up at six o'clock. I take a quick shower and I get ready for work. I don't have a long commute because I work from home. I make a cup of coffee and I check my emails. At seven, I start my shift. I talk to customers on the phone and I help them with their problems. At noon, I take a break and I eat lunch with my family. In the evening, I practice my English for twenty minutes. Then I watch a movie and I go to bed at ten.",
+ [["Où travaille-t-il ?",["À la maison","Dans un bureau en ville","Dans un entrepôt"]],["Que fait-il le soir ?",["Il pratique son anglais 20 minutes","Il travaille encore","Il va à la salle de sport"]]]),
+R("r2","At the Coffee Shop","A2","Un dialogue simple pour commander et faire du small talk. Lis chaque rôle avec une voix différente.",
+ [["to go","à emporter"],["for here","sur place"],["anything else","autre chose"],["keep the change","gardez la monnaie"]],
+ "Barista: Hi there! What can I get for you today?\nCustomer: Hi! Can I get a large coffee with milk, please?\nBarista: Sure. For here or to go?\nCustomer: To go, please. It's a busy morning.\nBarista: I know the feeling! Would you like anything else?\nCustomer: No, that's all, thanks. How much is it?\nBarista: That's three fifty.\nCustomer: Here's five dollars. Keep the change.\nBarista: Thank you! Have a great day!",
+ [["Que commande le client ?",["Un grand café au lait à emporter","Un thé sur place","Deux cafés noirs"]],["« Keep the change » veut dire :",["Gardez la monnaie","Changez de place","Gardez le reçu"]]]),
+R("r3","My Career Story","B1","Un parcours professionnel au passé et au present perfect, construit comme une réponse à « Tell me about yourself ». Remplace ensuite les détails par les tiens.",
+ [["background","parcours"],["promoted","promu"],["handle","gérer"],["skills","compétences"]],
+ "I have a background in customer service and sales. I started my career at a telecom company, where I helped customers by phone, chat and email. After a little more than a year, I was promoted to an analyst role. Later, I joined a law firm as an intake and sales specialist. I have talked with hundreds of families, and I have learned how to explain complex things in simple words. I speak English, French and Haitian Creole. Now, I'm looking for a new challenge where I can use these skills every day.",
+ [["Où a-t-il commencé sa carrière ?",["Dans une entreprise de télécoms","Dans un cabinet d'avocats","Dans une société de transport"]],["Quelle compétence a-t-il apprise ?",["Expliquer des choses complexes simplement","Conduire un camion","Programmer des sites web"]]],
+ ["<b>Astuce :</b> enregistre-toi en lisant ce texte, puis compare avec 🔊."]),
+R("r4","A Call with an Angry Customer","B1","Un appel de service client difficile, géré avec empathie (leçon 10). Lis le rôle de l'agent avec une voix calme et souriante.",
+ [["refund","remboursement"],["charged twice","débité deux fois"],["pull up","afficher (un dossier)"],["reference number","numéro de référence"]],
+ "Customer: Hi, I'm really upset. You charged my card twice this month!\nAgent: I'm very sorry to hear that. I can appreciate how frustrating this must be. Could I please get your full name?\nCustomer: It's Maria Lopez.\nAgent: Thank you, Ms. Lopez. Let me pull up your account. Is it okay if I put you on hold for a moment?\nCustomer: Fine.\nAgent: Thank you for holding. You're right, there was a double charge. I've requested a refund, and you will see it in three to five business days.\nCustomer: Okay, thank you.\nAgent: You're welcome. Your reference number is 4521. Is there anything else I can help you with today?",
+ [["Quel est le problème de la cliente ?",["Elle a été débitée deux fois","Son colis est perdu","Elle veut changer d'adresse"]],["Dans combien de temps aura-t-elle son remboursement ?",["3 à 5 jours ouvrés","Tout de suite","Un mois"]]]),
+R("r5","A Dispatcher's Morning","B1","La matinée d'un dispatcher : vocabulaire du métier, horaires et prépositions (leçon 10 du module 4).",
+ [["load board","site de chargements"],["deadhead","miles à vide"],["rate con","contrat du chargement"],["check in","faire le point"]],
+ "My day starts at five in the morning. First, I check in with my drivers to see where they are and how many hours they have left. Then I open the load board and look for loads near each truck. I always compare the rate per mile, including the deadhead miles. When I find a good load, I call the broker and negotiate the rate. After we agree, the broker sends me the rate con. I read it carefully, I sign it, and I send the details to the driver. By nine o'clock, all my trucks are usually moving.",
+ [["Que fait-il en premier ?",["Il fait le point avec ses chauffeurs","Il appelle les brokers","Il lit la rate con"]],["Que vérifie-t-il avant d'envoyer les détails au chauffeur ?",["Il lit et signe la rate con","Il appelle la police","Il change de load board"]]]),
+R("r6","Negotiating a Load","B1+","Une négociation complète avec un broker : questions, arguments et accord (vidéos 3 à 6 du cours de dispatch).",
+ [["posted rate","tarif affiché"],["heavy","lourd"],["meet me in the middle","couper la poire en deux"],["deal","marché conclu"]],
+ "Dispatcher: Hi, I'm calling about your load from Chicago to Nashville. What's the posted rate?\nBroker: We're paying one thousand five hundred.\nDispatcher: What's the weight?\nBroker: Forty-four thousand pounds.\nDispatcher: That's a heavy load, and my truck is empty just ten miles away. I need two thousand to make it work.\nBroker: That's too high. I can do one thousand seven hundred.\nDispatcher: Could you meet me in the middle at one thousand eight hundred and fifty?\nBroker: Okay, one thousand eight hundred and fifty. What's your MC number?\nDispatcher: Great, it's a deal. I'll send you our MC number and our packet by email right now.",
+ [["À quel prix concluent-ils ?",["1 850 dollars","1 500 dollars","2 000 dollars"]],["Quel argument utilise le dispatcher ?",["La charge est lourde et le camion est vide tout près","Il est pressé de rentrer","Le chauffeur est nouveau"]]]),
+R("r7","The Job Interview","B2","Un entretien complet. Lis les réponses du candidat avec assurance, en faisant des pauses entre les idées.",
+ [["fit","adéquation au poste"],["under pressure","sous pression"],["outcome","résultat"],["work in progress","en cours d'amélioration"]],
+ "Interviewer: Thank you for coming. Can you tell me a little about yourself?\nCandidate: Sure. I have more than four years of experience in customer service and sales. I've helped hundreds of customers by phone, chat and email, and I speak three languages. I'm now looking for a role where I can grow with a strong team.\nInterviewer: What is your greatest weakness?\nCandidate: My spoken English is not as strong as my written English. To improve, I practice every day with shadowing and mock interviews. I've already made a lot of progress, but it's still a work in progress.\nInterviewer: Do you have any questions for us?\nCandidate: Yes. What does success look like in this role in the first ninety days?",
+ [["Quelle faiblesse cite le candidat ?",["Son anglais oral","Son manque d'expérience","Sa ponctualité"]],["Quelle question pose-t-il à la fin ?",["À quoi ressemble la réussite dans ce poste les 90 premiers jours","Quel est le salaire","Combien de vacances il aura"]]]),
+R("r8","Why Speaking Every Day Matters","B2","Un court article sur l'apprentissage, avec des conditionnels, des comparatifs et du present perfect. Lis-le comme si tu le présentais à quelqu'un.",
+ [["fluent","qui parle couramment"],["habit","habitude"],["mistakes","erreurs"],["confidence","confiance en soi"]],
+ "Many learners can read and write English well, but they feel nervous when they have to speak. The reason is simple: speaking is a skill, and skills need practice. If you speak for only ten minutes every day, you will improve faster than if you study grammar for two hours once a week. Your brain needs repetition to make words automatic. Don't be afraid of mistakes. Every fluent speaker has made thousands of them. If you had started speaking a year ago, you would already be more confident today. The best time to start is now.",
+ [["Selon le texte, qu'est-ce qui marche le mieux ?",["Parler 10 minutes chaque jour","Étudier la grammaire 2 heures par semaine","Lire sans parler"]],["Que dit le texte sur les erreurs ?",["Il ne faut pas en avoir peur","Il faut les éviter à tout prix","Elles empêchent de progresser"]]])
+);
+
+BANK.push(
+["He ___ from home every day.",["works","work","is work"],0,"he / she / it + -s (module 4)."],
+["Right now, I ___ to a client.",["am talking","talk","talks"],0,"Action en cours : be + -ing."],
+["Quelle phrase est correcte ?",["I know the answer.","I'm knowing the answer.","I knowing the answer."],0,"know = verbe d'état, pas de -ing."],
+["Yesterday I ___ the broker.",["called","have called","call"],0,"Moment fini → past simple."],
+["I didn't ___ the email.",["send","sent","sended"],0,"Après didn't : base verbale."],
+["Passé de « buy » :",["bought","buyed","brought"],0,"buy → bought."],
+["I ___ here for three years. (et j'y suis toujours)",["have worked","work","worked"],0,"Present perfect + for."],
+["I've lived here ___ 2019.",["since","for","from"],0,"since + point de départ."],
+["Have you ever ___ to Canada?",["been","was","go"],0,"have + participe passé."],
+["Le téléphone sonne : « I ___ get it! »",["'ll","am going to","going"],0,"Décision immédiate → will."],
+["C'est déjà prévu : « I ___ apply next week. »",["'m going to","will to","going"],0,"Plan décidé → going to."],
+["___ she work on Saturdays?",["Does","Do","Is"],0,"she → does."],
+["Quelle question est correcte ?",["Where do you work?","Where you work?","Where does you work?"],0,"Mot interrogatif + do + sujet + verbe."],
+["He can ___ three languages.",["speak","speaks","to speak"],0,"Modal + base, sans to."],
+["« Tu n'es pas obligé » :",["You don't have to.","You mustn't.","You shouldn't to."],0,"mustn't = interdit."],
+["Demande polie :",["Could you repeat that, please?","Repeat that.","You can to repeat?"],0,"Could you… ?"],
+["If it rains tomorrow, we ___ stay home.",["will","would","would have"],0,"Conditionnel 1."],
+["If I ___ you, I'd take the job.",["were","am","will be"],0,"If I were you…"],
+["Quelle phrase est correcte ?",["If he calls, I'll answer.","If he will call, I'll answer.","If he would call, I answer."],0,"Pas de will après if."],
+["I'm ___ dispatcher.",["a","an","(rien)"],0,"Métier → a / an."],
+["It takes ___ hour.",["an","a","the"],0,"h muet : an hour."],
+["How ___ money do you need?",["much","many","a few"],0,"money = indénombrable."],
+["Quelle phrase est correcte ?",["I need some information.","I need some informations.","I need an information."],0,"information est indénombrable."],
+["The pickup is ___ Monday ___ 8 a.m.",["on / at","in / at","at / on"],0,"on + jour, at + heure."],
+["I arrived ___ work on time.",["at","to","in"],0,"arrive at + lieu précis."],
+["This load is ___ than the other one.",["cheaper","more cheap","more cheaper"],0,"Adjectif court → -er."],
+["It's the ___ job I've ever had.",["best","better","most good"],0,"good → better → the best."],
+["He ___ me that the load was ready.",["told","said","say"],0,"tell + personne."],
+["« I will call you. » → He said he ___ call me.",["would","will","wills"],0,"will → would."],
+["Lire à voix haute aide surtout à :",["Rendre les mots automatiques et gagner en assurance","Apprendre l'orthographe seulement","Éviter de parler"],0,"Module 5."]
+);
+
 /* ---------- storage ---------- */
 const KD='anglais-done',KX='anglais-ex',KB='anglais-best',KP='anglais-pitch';
 function gs(k){try{return new Set(JSON.parse(localStorage.getItem(k)||'[]'))}catch(e){return new Set()}}
@@ -478,9 +727,9 @@ function renderLessons(){
     const a=document.createElement('a');a.href='#'+l.id;a.dataset.t=(i+1)+'. '+l.t;a.textContent=a.dataset.t;toc.appendChild(a);
     const s=document.createElement('section');s.className='card lesson';s.id=l.id;
     s.innerHTML='<span class="tag">Leçon '+(i+1)+' sur '+L.length+'</span><h2>'+(i+1)+'. '+l.t+'</h2><div class="meta">'+l.ch+' · '+l.acc+'</div>'+
-      '<div class="player"><iframe loading="lazy" src="https://www.youtube.com/embed/'+l.v+'" title="'+esc(l.t)+'" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
-      '<div class="fallback">Si la vidéo ne s\'affiche pas : <a href="https://www.youtube.com/watch?v='+l.v+'" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>'+
-      '<h3>Résumé</h3><p>'+l.sum+'</p><h3>À retenir</h3><ul>'+l.pts.map(p=>'<li>'+p+'</li>').join('')+'</ul>'+
+      (l.v?'<div class="player"><iframe loading="lazy" src="https://www.youtube.com/embed/'+l.v+'" title="'+esc(l.t)+'" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>'+
+      '<div class="fallback">Si la vidéo ne s\'affiche pas : <a href="https://www.youtube.com/watch?v='+l.v+'" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>':'')+
+      '<h3>'+(l.v?'Résumé de la vidéo':'Présentation')+'</h3><p>'+l.sum+'</p>'+(l.rule?'<h3>La règle</h3>'+l.rule:'')+'<h3>'+(l.m===5?'Vocabulaire et conseils':'À retenir')+'</h3><ul>'+l.pts.map(p=>'<li>'+p+'</li>').join('')+'</ul>'+
       '<h3>Phrases clés <small>🔊 écouter · 🐢 lentement · 🎙️ répéter</small></h3><div class="phr"></div>'+
       '<h3>Erreurs à éviter</h3><div class="err"><ul>'+l.err.map(p=>'<li>'+p+'</li>').join('')+'</ul></div>'+
       '<div class="ex"><h3>✍️ Exercice</h3><p>'+l.ex.i+'</p><div class="items"></div><div class="exstat"></div></div>'+
@@ -519,7 +768,7 @@ function renderItem(it,k,mark){
     el.innerHTML='<div class="q">'+esc(parts[0])+'<input class="fi" style="width:110px;display:inline-block" autocapitalize="off" autocomplete="off">'+esc(parts[1]||'')+'</div><button class="btn">Vérifier</button><div class="why"></div>';
     const inp=el.querySelector('input'),w=el.querySelector('.why');let tries=0;
     const full=()=>parts[0]+it.a[0]+(parts[1]||'');
-    el.querySelector('.btn').onclick=()=>{const v=inp.value.trim().toLowerCase().replace(/[.!?]/g,'');
+    el.querySelector('.btn').onclick=()=>{const v=inp.value.trim().toLowerCase().replace(/[’‘]/g,"'").replace(/[.!?]/g,'').replace(/\s+/g,' ');
       if(it.a.includes(v)){inp.style.borderColor='#4caf6a';w.innerHTML='✅ Correct ! <button class="btn sec">🔊</button>';w.querySelector('button').onclick=()=>say(full());mark(el,true,tries===0)}
       else{tries++;inp.style.borderColor='#e05a5a';if(tries>=2){w.innerHTML='Réponse : <b>'+esc(it.a[0])+'</b> → '+esc(full())+' <button class="btn sec">🔊</button>';w.querySelector('button').onclick=()=>say(full());mark(el,true,false)}else{w.textContent='❌ Pas encore. '+(it.h?'Indice : '+it.h:'Réessaie.')}}};
     inp.addEventListener('keydown',e=>{if(e.key==='Enter')el.querySelector('.btn').click()});
@@ -550,6 +799,26 @@ function renderItem(it,k,mark){
     el.querySelector('.btn').onclick=()=>{if(!inp.value.trim()){w.textContent='Écris d\'abord ce que tu entends.';return}const p=Math.round(sim(inp.value,it.s)*100);const good=p>=85;
       w.innerHTML=(good?'✅ Très bien ('+p+' %). ':'À corriger ('+p+' %). ')+'La phrase : <b>'+esc(it.s)+'</b>';mark(el,true,good)};
     inp.addEventListener('keydown',e=>{if(e.key==='Enter')el.querySelector('.btn').click()});
+  }else if(it.t==='read'){
+    const lines=it.tx.split('\n').map(l=>{const m=l.match(/^([A-Z][a-zA-Z ]{0,14}):\s*(.*)$/);return m?{who:m[1],txt:m[2]}:{who:'',txt:l}});
+    const all=lines.map(x=>x.txt).join(' ');
+    el.innerHTML='<div class="q">📖 Lecture à voix haute : '+esc(it.ti)+'</div><div class="readtx">'+lines.map(x=>'<p>'+(x.who?'<b>'+esc(x.who)+' :</b> ':'')+esc(x.txt)+'</p>').join('')+'</div>'+
+      '<button class="btn sec">🔊 Écouter tout le texte</button><button class="btn sec">🐢 Lentement</button><button class="btn sec">⏹ Stop</button>'+
+      '<details style="margin-top:10px"><summary>S\'entraîner phrase par phrase (🔊 🐢 🎙️)</summary><div class="sents"></div></details>'+
+      '<div style="margin-top:10px"><button class="btn sec">🎙️ Lire tout le texte au micro</button></div><div class="res"></div>'+
+      '<button class="btn vi">✓ J\'ai lu le texte à voix haute</button>';
+    const bs=el.querySelectorAll(':scope > button, :scope > div > button');
+    const sents=el.querySelector('.sents');
+    lines.forEach(x=>x.txt.replace(/([.!?])\s+/g,'$1\n').split('\n').filter(Boolean).forEach(s=>sents.appendChild(phraseRow(s,x.who))));
+    const res=el.querySelector(':scope > .res');
+    bs[0].onclick=()=>say(all);bs[1].onclick=()=>say(all,true);bs[2].onclick=()=>{if('speechSynthesis' in window)speechSynthesis.cancel()};
+    bs[3].onclick=()=>{if(!SR){listen(bs[3],res,all);return}
+      const r=new SR();r.lang='en-US';r.continuous=true;r.interimResults=false;let said='';bs[3].textContent='⏹ J\'ai fini de lire';res.textContent='🎙️ Lis le texte à voix haute, puis appuie sur « J\'ai fini de lire ».';
+      let on=true;r.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal)said+=' '+e.results[i][0].transcript};
+      r.onerror=e=>{res.textContent=e.error==='not-allowed'?'Micro refusé : autorise-le, ou lis simplement à voix haute.':'Le micro s\'est arrêté. Réessaie.'};
+      r.onend=()=>{bs[3].textContent='🎙️ Lire tout le texte au micro';bs[3].onclick=old;if(said.trim()){const p=Math.round(sim(said,all)*100);res.innerHTML='Mots reconnus : <span class="'+(p>=80?'good':p>=55?'mid':'low')+'">'+p+' %</span> '+(p>=80?'Excellent !':p>=55?'Bien : relis les phrases difficiles avec 🐢.':'Entraîne-toi phrase par phrase, puis recommence.')}};
+      const old=bs[3].onclick;bs[3].onclick=()=>{on=false;r.stop()};try{r.start()}catch(e){}};
+    bs[4].onclick=()=>{bs[4].disabled=true;mark(el,false)};
   }else if(it.t==='builder'){
     const F=[["role1","Ton premier poste lié au job","customer service agent"],["co1","Type d'entreprise","a telecom company"],["task1","Ce que tu faisais","helped customers by phone, chat and email"],["ach1","Une réussite (avec un chiffre si possible)","was promoted to an analyst role after about a year"],["role2","Ton poste le plus récent","intake and sales specialist"],["co2","Type d'entreprise","a law firm"],["ach2","Une réussite dans ce poste","helped close over one million dollars in sales"],["need","Ce que le poste demande (lis l'offre)","can handle customer calls calmly and professionally"],["skills","Tes compétences clés","customer service, sales and three languages"]];
     const saved=(()=>{try{return JSON.parse(localStorage.getItem(KP)||'{}')}catch(e){return{}}})();

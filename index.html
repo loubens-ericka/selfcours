@@ -32,12 +32,25 @@
   th{background:#eef2f7}
   .note{font-size:14px;color:var(--mut);background:#fff;border:1px dashed var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}
   footer{color:var(--mut);font-size:13px;padding:20px;text-align:center}
+  h2.part{margin:34px 0 4px;font-size:20px;color:var(--acc)}
+  .btn{background:var(--acc);color:#fff;border:0;border-radius:10px;padding:12px 20px;font-size:16px;cursor:pointer;margin:6px 6px 6px 0}
+  .btn.sec{background:#eef2f7;color:var(--ink)}
+  .q{border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
+  .q p{margin:0 0 8px;font-weight:600}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:6px 0;font-size:15px;cursor:pointer;color:var(--ink)}
+  .opt:hover{background:#f1f5fb}
+  .opt.good{background:#d8f0df;border-color:#4caf6a}
+  .opt.bad{background:#fde1e1;border-color:#e05a5a}
+  .why{font-size:14px;color:var(--mut);margin-top:6px;display:none}
+  .score{font-size:20px;font-weight:700;margin:12px 0}
+  .bar{height:8px;background:#e3e7ee;border-radius:6px;overflow:hidden;margin:8px 0}
+  .bar i{display:block;height:100%;background:var(--acc);width:0}
 </style>
 </head>
 <body>
 <header>
   <h1>Cours Dispatch Camions (USA)</h1>
-  <p>7 vidéos, chacune suivie de son résumé, des points à retenir, des phrases anglaises à répéter et des erreurs à éviter. À la fin : glossaire et plan d'étude sur 3 semaines.</p>
+  <p>12 vidéos (7 de la playlist + 5 compléments), chacune suivie de son résumé, des points à retenir, des phrases anglaises à répéter et des erreurs à éviter. Un quiz pour tester tes connaissances, puis glossaire et plan d'étude sur 3 semaines.</p>
 </header>
 <main>
 
@@ -50,12 +63,19 @@
   <a href="#v5">5. Simulation de négociation avec un broker</a>
   <a href="#v6">6. Broker contre dispatcher : bien négocier</a>
   <a href="#v7">7. Detentions et layovers</a>
+  <a href="#v8">8. Factoring et paiement (complément)</a>
+  <a href="#v9">9. Heures de service et ELD (complément)</a>
+  <a href="#v10">10. Crédit des brokers (complément)</a>
+  <a href="#v11">11. Calcul du prix par mile (complément)</a>
+  <a href="#v12">12. Fraudes : double brokering (complément)</a>
+  <a href="#quiz">Quiz d'entraînement</a>
   <a href="#glossaire">Glossaire</a>
   <a href="#plan">Plan sur 3 semaines</a>
 </nav>
 
 <div class="note">Résumés générés par Gemini à partir des vidéos puis mis en forme. Gemini peut se tromper : vérifie les chiffres en regardant la vidéo. Il faut une connexion internet pour lire les vidéos.</div>
 
+<!-- VIDEO 1 -->
 <section class="video" id="v1">
   <h2>1. How To Become A Truck Dispatcher In 5 Steps?</h2>
   <div class="meta">Trucking Territory · Beginner Training</div>
@@ -79,6 +99,7 @@
   </ul>
 </section>
 
+<!-- VIDEO 2 -->
 <section class="video" id="v2">
   <h2>2. How To Become A Truck Dispatcher In 30 Days? (Checklist)</h2>
   <div class="meta">Trucking Territory · Checklist Training</div>
@@ -105,6 +126,7 @@
   </ul></div>
 </section>
 
+<!-- VIDEO 3 -->
 <section class="video" id="v3">
   <h2>3. Truck Dispatcher Terminology You Must Know</h2>
   <div class="meta">Trucking Territory · Freight Dispatcher Training</div>
@@ -126,6 +148,7 @@
   </ul>
 </section>
 
+<!-- VIDEO 4 -->
 <section class="video" id="v4">
   <h2>4. Truck Dispatcher — Load Booking Conversation Example</h2>
   <div class="meta">Exemple d'appel pour réserver un chargement (la chaîne peut différer des autres vidéos)</div>
@@ -155,6 +178,7 @@
   </ul></div>
 </section>
 
+<!-- VIDEO 5 -->
 <section class="video" id="v5">
   <h2>5. Truck Dispatcher and Broker Call Simulation — Negotiation #1</h2>
   <div class="meta">Trucking Territory</div>
@@ -188,6 +212,7 @@
   <div class="note">Dans le résumé de Gemini, les rôles dispatcher/broker étaient parfois mélangés. Écoute la vidéo pour entendre le vrai dialogue.</div>
 </section>
 
+<!-- VIDEO 6 -->
 <section class="video" id="v6">
   <h2>6. Freight Broker vs Truck Dispatcher: How To Always Negotiate Good Loads</h2>
   <div class="meta">Trucking Territory · entretien avec Alex, responsable dispatch</div>
@@ -216,6 +241,7 @@
   </ul></div>
 </section>
 
+<!-- VIDEO 7 -->
 <section class="video" id="v7">
   <h2>7. How To Make Freight Brokers Pay For Detentions & Layovers</h2>
   <div class="meta">Trucking Territory</div>
@@ -245,6 +271,268 @@
   </ul></div>
 </section>
 
+<h2 class="part">Compléments : sujets absents de la playlist</h2>
+<div class="note">Ces 5 vidéos couvrent ce que la playlist ne traite pas : paiement et factoring, heures de service (ELD), vérification du crédit des brokers, calcul de rentabilité et fraudes. Chiffres issus des résumés Gemini : à vérifier dans la vidéo.</div>
+
+<!-- VIDEO 8 -->
+<section class="video" id="v8">
+  <h2>8. Truck Dispatcher Service: What Is Factoring</h2>
+  <div class="meta">Complément · paiement et facturation</div>
+  <div class="player"><iframe src="https://www.youtube.com/embed/SiVutZtRTsM" title="Truck Dispatcher Service: What Is Factoring" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="fallback">Si la vidéo ne s'affiche pas : <a href="https://www.youtube.com/watch?v=SiVutZtRTsM" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>
+  <h3>Résumé</h3>
+  <p>Le factoring (affacturage) est le moyen le plus courant pour un transporteur d'être payé vite. Après la livraison et le BOL signé, la société de factoring avance l'argent, garde une petite commission (environ 2 à 5 %) et verse le reste en un jour ou deux. La vidéo montre aussi comment un service de dispatch facture ses clients : une facture par semaine, qui regroupe les chargements réservés.</p>
+  <h3>À retenir</h3>
+  <ul>
+    <li>Chaîne de paiement : le shipper paie le broker, le broker paie le carrier (ex. 3 000 $ puis 2 000 $ pour le transporteur).</li>
+    <li>Le <strong>factor</strong> prélève environ 2 à 5 % mais paie en 24 à 48 h.</li>
+    <li>Le <strong>BOL signé</strong> est la pièce qui déclenche le paiement.</li>
+    <li>Le dispatcher facture sa commission chaque semaine, en regroupant les chargements.</li>
+  </ul>
+  <h3>Phrases anglaises à répéter</h3>
+  <div class="say"><ul>
+    <li>"Please send me the signed BOL as soon as the load is delivered."</li>
+    <li>"Are you factoring this load, or waiting for the broker to pay directly?"</li>
+    <li>"I will send your weekly dispatch invoice on Friday."</li>
+  </ul></div>
+  <h3>Erreurs à éviter</h3>
+  <div class="err"><ul>
+    <li>Envoyer un BOL incomplet ou non signé.</li>
+    <li>Ne pas avoir de procédure claire pour facturer sa commission.</li>
+    <li>Ne pas suivre les annulations en cours de semaine : la facture sera fausse.</li>
+  </ul></div>
+</section>
+
+<!-- VIDEO 9 -->
+<section class="video" id="v9">
+  <h2>9. ELD Mandate & Hours of Service Explained (Beginner's Guide for Dispatchers)</h2>
+  <div class="meta">Complément · règles de conduite</div>
+  <div class="player"><iframe src="https://www.youtube.com/embed/a_kUsRjsT_w" title="ELD Mandate & Hours of Service Explained (Beginner's Guide for Dispatchers)" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="fallback">Si la vidéo ne s'affiche pas : <a href="https://www.youtube.com/watch?v=a_kUsRjsT_w" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>
+  <h3>Résumé</h3>
+  <p>Les heures de service (HOS) sont des règles strictes, suivies par l'ELD (journal électronique du camion). Avant de réserver un chargement, le dispatcher doit savoir combien d'heures il reste au chauffeur. Réserver un chargement impossible à livrer dans les heures permises crée des retards et des amendes.</p>
+  <h3>À retenir</h3>
+  <ul>
+    <li><strong>14 heures</strong> de fenêtre de service par jour, dont <strong>11 heures</strong> de conduite maximum. La fenêtre de 14 h ne se met pas en pause.</li>
+    <li><strong>10 heures</strong> de repos consécutives après la fenêtre.</li>
+    <li><strong>70 heures sur 8 jours</strong>, puis un reset de <strong>34 heures</strong> de repos.</li>
+    <li>Distance réaliste : environ 500 à 600 miles par jour. Un trajet de 1 000 miles prend donc 2 jours.</li>
+    <li>Demander toujours au chauffeur combien d'heures il lui reste.</li>
+  </ul>
+  <h3>Phrases anglaises à répéter</h3>
+  <div class="say"><ul>
+    <li>"How many hours do you have left on your 14-hour clock?"</li>
+    <li>"With the 10-hour break, we can deliver Wednesday morning."</li>
+    <li>"Don't start your work clock until you are ready to roll."</li>
+  </ul></div>
+  <h3>Erreurs à éviter</h3>
+  <div class="err"><ul>
+    <li>Penser qu'on peut mettre la fenêtre de 14 h en pause.</li>
+    <li>Planifier 700 miles par jour sans marge (carburant, trafic, attente).</li>
+    <li>Envoyer un chauffeur sans heures disponibles vers un pickup.</li>
+  </ul></div>
+</section>
+
+<!-- VIDEO 10 -->
+<section class="video" id="v10">
+  <h2>10. Freight Dispatchers: Check the Broker's Credit or You May Not Get Paid on Time</h2>
+  <div class="meta">Complément · crédit des brokers</div>
+  <div class="player"><iframe src="https://www.youtube.com/embed/ABlxxtUhftE" title="Freight Dispatchers: Check the Broker's Credit or You May Not Get Paid on Time" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="fallback">Si la vidéo ne s'affiche pas : <a href="https://www.youtube.com/watch?v=ABlxxtUhftE" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>
+  <h3>Résumé</h3>
+  <p>Un broker ou un shipper peut payer jusqu'à 90 jours plus tard. Le factoring paie en 24 h, mais seulement si le factor a approuvé le broker. Avant de réserver, le dispatcher vérifie donc le numéro MC du broker dans le portail du factor : « approved » ou « not approved ».</p>
+  <h3>À retenir</h3>
+  <ul>
+    <li>Sans approbation du factor, le transporteur attend le paiement direct du broker, parfois des mois.</li>
+    <li>Demander à l'owner-operator l'accès au <strong>portail du factor</strong> pour vérifier chaque broker.</li>
+    <li>Vérifier le <strong>MC number</strong> du broker avant d'accepter le chargement, même si on est pressé.</li>
+    <li>Un camion a des charges fixes chaque semaine : il lui faut un paiement rapide.</li>
+  </ul>
+  <h3>Phrases anglaises à répéter</h3>
+  <div class="say"><ul>
+    <li>"Before I book this, let me check the broker's MC number on your factoring portal."</li>
+    <li>"This broker is not approved with your factor, so we should pass."</li>
+    <li>"Can you give me access to your factoring portal?"</li>
+  </ul></div>
+  <h3>Erreurs à éviter</h3>
+  <div class="err"><ul>
+    <li>Réserver dans la précipitation sans vérifier le crédit du broker.</li>
+    <li>Sous-estimer l'effet d'un paiement à 90 jours sur la trésorerie du camion.</li>
+    <li>Accepter un broker refusé par le factor.</li>
+  </ul></div>
+</section>
+
+<!-- VIDEO 11 -->
+<section class="video" id="v11">
+  <h2>11. How to Calculate Rate Per Mile Trucking as a Dispatcher</h2>
+  <div class="meta">Complément · rentabilité d'un chargement</div>
+  <div class="player"><iframe src="https://www.youtube.com/embed/Qh-IZliz_dE" title="How to Calculate Rate Per Mile Trucking as a Dispatcher" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="fallback">Si la vidéo ne s'affiche pas : <a href="https://www.youtube.com/watch?v=Qh-IZliz_dE" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>
+  <h3>Résumé</h3>
+  <p>Le tarif affiché ne dit pas si le chargement est rentable. Le vrai prix par mile se calcule en divisant le revenu total par <strong>tous</strong> les miles, y compris le deadhead. Il faut ensuite le comparer au coût par mile du camion (coûts fixes + coûts variables).</p>
+  <h3>À retenir</h3>
+  <ul>
+    <li>Formule : <strong>revenu ÷ (miles chargés + deadhead)</strong>.</li>
+    <li>Exemple : 1 800 $ pour 900 miles semble faire 2,00 $/mile ; avec 150 miles à vide, c'est 1 800 ÷ 1 050 = <strong>1,71 $/mile</strong>.</li>
+    <li>Autre exemple : 1 900 $ pour 800 miles + 250 de deadhead = 1,81 $/mile. Si le coût du camion est 1,75 $/mile, il reste 6 centimes de marge.</li>
+    <li>Coûts <strong>fixes</strong> : mensualités, assurance, permis, ELD. Coûts <strong>variables</strong> : carburant, chauffeur, entretien, pneus, péages.</li>
+    <li>Toujours connaître le coût par mile du camion avant de négocier.</li>
+  </ul>
+  <h3>Phrases anglaises à répéter</h3>
+  <div class="say"><ul>
+    <li>"With the 150 deadhead miles, the real rate drops to $1.71 per mile."</li>
+    <li>"Does this rate cover your cost per mile, fuel and tolls?"</li>
+    <li>"The rate looks good on the board, but we need more to make it work."</li>
+  </ul></div>
+  <h3>Erreurs à éviter</h3>
+  <div class="err"><ul>
+    <li>Calculer le prix par mile sur les miles chargés seulement.</li>
+    <li>Accepter un chargement parce que le tarif brut paraît élevé.</li>
+    <li>Ignorer péages, carburant et deadhead.</li>
+  </ul></div>
+</section>
+
+<!-- VIDEO 12 -->
+<section class="video" id="v12">
+  <h2>12. Double Broker Scam in Trucking: 3 Scams Every Trucker Should Know</h2>
+  <div class="meta">Complément · fraudes</div>
+  <div class="player"><iframe src="https://www.youtube.com/embed/nwL7uk5qHw0" title="Double Broker Scam in Trucking: 3 Scams Every Trucker Should Know" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  <div class="fallback">Si la vidéo ne s'affiche pas : <a href="https://www.youtube.com/watch?v=nwL7uk5qHw0" target="_blank" rel="noopener">ouvrir sur YouTube</a></div>
+  <h3>Résumé</h3>
+  <p>Trois arnaques courantes qui font livrer sans être payé. Le <strong>double brokering</strong> : un faux broker prend le chargement à un tarif trop beau et disparaît. Le <strong>phantom reload</strong> : après un premier chargement réel, un rechargement urgent utilise une identité clonée. Le <strong>inside dispatcher scam</strong> : un service de dispatch cache une grosse part du tarif en modifiant la rate confirmation.</p>
+  <h3>À retenir</h3>
+  <ul>
+    <li>Vérifier le MC number de chaque broker sur <strong>FMCSA SAFER</strong>, même pour un reload avec un contact connu.</li>
+    <li>Signal d'alerte : tarif bien au-dessus du marché + autorité très récente (moins de 6 mois).</li>
+    <li>Une commission de dispatch normale se situe autour de 5 à 8 %. Retenir 30 % ou plus est un signe de fraude.</li>
+    <li>Exiger la <strong>rate confirmation originale</strong> envoyée directement par le broker.</li>
+    <li>Le montant exact des plaintes cité dans la vidéo est à vérifier : retiens la méthode, pas les chiffres.</li>
+  </ul>
+  <h3>Phrases anglaises à répéter</h3>
+  <div class="say"><ul>
+    <li>"I am verifying your MC number on FMCSA SAFER before we confirm."</li>
+    <li>"Can you send the original rate confirmation directly from the broker?"</li>
+    <li>"This rate is well above market and the authority is new, so it looks risky."</li>
+  </ul></div>
+  <h3>Erreurs à éviter</h3>
+  <div class="err"><ul>
+    <li>Baisser sa garde sur un reload « urgent ».</li>
+    <li>Accepter un tarif anormalement élevé sans vérifier le broker.</li>
+    <li>Ne pas comparer la rate con reçue avec l'originale.</li>
+  </ul></div>
+</section>
+
+<!-- QUIZ -->
+<section class="video" id="quiz">
+  <h2>Quiz d'entraînement</h2>
+  <p>30 questions sur les 12 vidéos. Les questions et les réponses sont mélangées à chaque essai. Après chaque réponse, tu vois la bonne réponse et une explication.</p>
+  <div id="qstart">
+    <button class="btn" onclick="startQuiz(30)">Activer le quiz (30 questions)</button>
+    <button class="btn sec" onclick="startQuiz(10)">Version rapide (10 questions)</button>
+  </div>
+  <div id="qbox" style="display:none">
+    <div class="bar"><i id="qbar"></i></div>
+    <div id="qprog" class="meta"></div>
+    <div id="qlist"></div>
+    <div id="qend" style="display:none">
+      <div class="score" id="qscore"></div>
+      <div id="qmsg"></div>
+      <button class="btn" onclick="startQuiz(QN)">Recommencer</button>
+      <button class="btn sec" onclick="startQuiz(QN,true)">Refaire mes erreurs</button>
+      <button class="btn sec" onclick="closeQuiz()">Fermer le quiz</button>
+    </div>
+  </div>
+</section>
+
+<script>
+const BANK=[
+["Quel est le rôle principal d'un dispatcher ?",["Trouver des chargements, négocier et suivre la livraison pour le chauffeur","Conduire le camion","Réparer le camion","Vendre des camions"],0,"Il coordonne chauffeurs et brokers : recherche, négociation, suivi, paperasse."],
+["Comment est le plus souvent payé un dispatcher ?",["Un pourcentage du gross revenue du camion","Un tarif fixe par appel","Uniquement un salaire horaire","Un pourcentage du prix du camion"],0,"Exemple : 4 % de 30 000 $ = 1 200 $ par mois pour un camion."],
+["Quel est le poids maximal total habituel d'un camion sur route ?",["80 000 lbs","30 000 lbs","120 000 lbs","10 000 lbs"],0,"La limite est de 80 000 lbs au total (vidéo 1)."],
+["Un dispatcher expérimenté gère environ combien de camions ?",["7 à 9","1","30 à 40","100"],0,"Environ 7 à 9 camions (vidéo 1)."],
+["Que signifie « deadhead » ?",["Miles parcourus à vide","Un chargement urgent","Un frais de retard","Un type de remorque"],0,"Les miles à vide, par exemple pour rejoindre le pickup."],
+["Que signifie BOL ?",["Bill of Lading, document de transport remis au chargement","Broker Of Loads","Basic Order List","Booking Of Loads"],0,"Le BOL est signé au chargement et sert de preuve ; il faut aussi y noter les heures."],
+["Que signifie POD ?",["Proof of Delivery, preuve de livraison","Price Of Delivery","Pickup On Demand","Packet Of Documents"],0,"POD = preuve que la marchandise est livrée."],
+["Qu'est-ce que la rate confirmation (rate con) ?",["Le contrat écrit du chargement entre broker et carrier","Un reçu de carburant","Une assurance","Une carte de load board"],0,"On la lit, on la signe et on la renvoie. Elle doit contenir toutes les conditions."],
+["Que signifie FCFS ?",["First come, first served : sans rendez-vous","Fast cargo for sale","Full cost for service","Freight car for sale"],0,"Premier arrivé, premier servi."],
+["Un broker propose 1 100 $ et ton chauffeur vise 1 500 $. Que fais-tu ?",["Je donne mes arguments (poids, relief, prix par mile) et je demande plus","J'accepte tout de suite","Je raccroche sans parler","Je baisse mon prix"],0,"Ne jamais accepter le premier prix : argumenter avec des faits (vidéo 5)."],
+["Dans une zone chaude (hot area), que peux-tu faire ?",["Demander plus (500 à 1 000 $ de plus)","Accepter moins","Refuser tous les chargements","Éteindre le téléphone"],0,"Zone chaude = forte demande = meilleur prix ; zone calme = marge plus faible pour garder le camion en mouvement."],
+["Peut-on mentir sur l'équipement (remorque propre, food grade) ?",["Non, jamais","Oui, si le prix est bon","Oui, si le broker ne vérifie pas","Seulement pour les petits chargements"],0,"Mentir détruit la relation avec les brokers (vidéo 6)."],
+["Que doit-on demander AVANT de booker pour les attentes (detention) ?",["Si le broker paie, après combien d'heures et à quel tarif","La couleur du camion","Le nom du shipper seulement","Rien du tout"],0,"Et faire écrire ces conditions sur la rate con (vidéo 7)."],
+["Où noter l'heure d'arrivée et de départ pour prouver une detention ?",["Sur le BOL","Sur un post-it","Dans un SMS seulement","Nulle part"],0,"Le BOL est la preuve."],
+["Qu'est-ce qu'un layover ?",["Une indemnité pour une nuit d'attente sur place","Un type de remorque","Un chargement double","Une amende"],0,"Souvent 100 à 150 $ par nuit (vidéo 7)."],
+["Le MC number sert à…",["Identifier le transporteur ou le broker","Mesurer le poids","Payer les péages","Réserver une remorque"],0,"Le broker l'utilise pour vérifier les antécédents du carrier."],
+["Que fait le factoring ?",["Une société avance le paiement du chargement contre une commission","Il remplace le dispatcher","Il livre la marchandise","Il répare le camion"],0,"Paiement rapide (24-48 h) contre environ 2 à 5 %."],
+["Quelle pièce déclenche le paiement du factor ?",["Le BOL signé","Le reçu de carburant","Une photo du camion","Le CDL"],0,"Sans BOL signé, le dossier est retardé."],
+["Pourquoi vérifier le crédit du broker auprès du factor ?",["Si le factor ne l'approuve pas, le chargement ne peut pas être affacturé","Pour connaître son adresse","Pour baisser le tarif","Ce n'est pas utile"],0,"Un broker non approuvé peut payer 90 jours plus tard, ou jamais (vidéo 10)."],
+["Quel est le délai de paiement possible d'un broker sans factoring ?",["Jusqu'à 90 jours","Toujours 1 jour","Toujours 7 jours","Immédiat"],0,"Sans factoring, le carrier peut attendre jusqu'à environ 3 mois."],
+["Combien d'heures de conduite maximum par jour (HOS) ?",["11 heures","8 heures","14 heures de conduite","20 heures"],0,"11 h de conduite dans une fenêtre de 14 h."],
+["La fenêtre de 14 heures peut-elle être mise en pause ?",["Non, elle continue de s'écouler","Oui, à volonté","Oui, pendant le chargement","Oui, avec un appel au broker"],0,"Une fois lancée, elle tourne : ne pas démarrer l'horloge trop tôt."],
+["Combien de repos consécutif après la fenêtre de 14 h ?",["10 heures","2 heures","5 heures","24 heures"],0,"10 heures consécutives."],
+["Quelle est la limite sur 8 jours et le reset ?",["70 heures, reset de 34 heures","40 heures, reset de 10 heures","100 heures, pas de reset","70 heures, reset de 1 heure"],0,"70 h sur 8 jours, puis 34 h de repos pour repartir à zéro."],
+["Combien de jours pour un trajet de 1 000 miles (ordre de grandeur) ?",["2 jours","3 heures","1 heure","1 semaine"],0,"Environ 500 à 600 miles par jour, avec le repos de 10 h."],
+["Un chargement paie 1 800 $ pour 900 miles chargés + 150 miles à vide. Quel est le vrai prix par mile ?",["Environ 1,71 $","2,00 $","1,50 $","2,50 $"],0,"1 800 ÷ 1 050 = 1,71 $. Il faut compter le deadhead."],
+["Quels sont des coûts variables du camion ?",["Carburant, entretien, pneus, chauffeur","Assurance seulement","Mensualité du camion","Permis annuel"],0,"Fixes : mensualité, assurance, permis, ELD. Variables : selon les miles."],
+["Que vérifier sur FMCSA SAFER ?",["Le MC/DOT number et l'autorité du broker ou du carrier","La météo","Le prix du carburant","Le poids du chargement"],0,"À faire pour chaque chargement, même un reload avec un contact connu."],
+["Qu'est-ce qu'un « phantom reload » ?",["Un rechargement urgent avec une identité clonée après un vrai chargement","Un chargement vide","Un retard de livraison","Un type de remorque"],0,"Fraude : revérifier le MC à chaque fois."],
+["Quel signal d'alerte pour un faux broker ?",["Tarif bien au-dessus du marché et autorité très récente","Un tarif normal","Un contact qui répond vite","Un MC number valide depuis 10 ans"],0,"Trop beau pour être vrai + autorité de moins de 6 mois = prudence."]
+];
+let QN=30,cur=[],idx=0,ok=0,wrong=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function startQuiz(n,onlyWrong){
+  QN=n;
+  let pool=onlyWrong&&wrong.length?wrong.slice():BANK.slice();
+  cur=shuffle(pool).slice(0,onlyWrong?pool.length:n);
+  idx=0;ok=0;wrong=[];
+  document.getElementById('qstart').style.display='none';
+  document.getElementById('qbox').style.display='block';
+  document.getElementById('qend').style.display='none';
+  show();
+  document.getElementById('quiz').scrollIntoView();
+}
+function show(){
+  if(idx>=cur.length){return end()}
+  const q=cur[idx];
+  const opts=shuffle(q[1].map((t,i)=>({t,i})));
+  document.getElementById('qprog').textContent='Question '+(idx+1)+' sur '+cur.length;
+  document.getElementById('qbar').style.width=(idx/cur.length*100)+'%';
+  const box=document.getElementById('qlist');
+  box.innerHTML='';
+  const d=document.createElement('div');d.className='q';
+  d.innerHTML='<p></p>';d.firstChild.textContent=q[0];
+  opts.forEach(o=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=o.t;
+    b.onclick=()=>answer(b,o.i===q[2],opts,d,q);
+    d.appendChild(b);
+  });
+  const w=document.createElement('div');w.className='why';d.appendChild(w);
+  const nx=document.createElement('button');nx.className='btn';nx.style.display='none';nx.textContent=(idx+1<cur.length)?'Question suivante':'Voir mon score';
+  nx.onclick=()=>{idx++;show()};d.appendChild(nx);
+  box.appendChild(d);
+}
+function answer(btn,good,opts,d,q){
+  const bs=d.querySelectorAll('.opt');
+  bs.forEach((b,k)=>{b.disabled=true;if(opts[k].i===q[2])b.classList.add('good')});
+  if(good){ok++}else{btn.classList.add('bad');wrong.push(q)}
+  const w=d.querySelector('.why');w.style.display='block';w.textContent=(good?'Bonne réponse. ':'Pas tout à fait. ')+q[3];
+  d.querySelector('.btn').style.display='inline-block';
+}
+function end(){
+  document.getElementById('qlist').innerHTML='';
+  document.getElementById('qbar').style.width='100%';
+  document.getElementById('qprog').textContent='Terminé';
+  const pct=Math.round(ok/cur.length*100);
+  document.getElementById('qscore').textContent='Score : '+ok+' / '+cur.length+' ('+pct+' %)';
+  document.getElementById('qmsg').textContent=pct>=90?'Excellent. Tu maîtrises le contenu.':pct>=70?'Bien. Relis les sections des erreurs et refais le quiz.':'Il faut encore réviser. Reprends les résumés, puis clique sur « Refaire mes erreurs ».';
+  document.getElementById('qend').style.display='block';
+}
+function closeQuiz(){
+  document.getElementById('qbox').style.display='none';
+  document.getElementById('qstart').style.display='block';
+}
+</script>
+
+<!-- GLOSSAIRE -->
 <section class="video" id="glossaire">
   <h2>Glossaire (anglais → français)</h2>
   <table>
@@ -274,10 +562,19 @@
     <tr><td>E-tracks</td><td>Rails d'arrimage dans la remorque</td></tr>
     <tr><td>Food grade</td><td>Remorque propre, adaptée aux produits alimentaires</td></tr>
     <tr><td>Empty</td><td>Camion vide, disponible</td></tr>
+    <tr><td>Factoring / Factor</td><td>Affacturage : société qui avance le paiement du chargement contre 2 à 5 %</td></tr>
+    <tr><td>HOS (Hours of Service)</td><td>Règles d'heures de conduite et de repos du chauffeur</td></tr>
+    <tr><td>ELD</td><td>Journal électronique qui enregistre les heures du chauffeur</td></tr>
+    <tr><td>Reset de 34 heures</td><td>34 heures de repos qui remettent le compteur de 70 h sur 8 jours à zéro</td></tr>
+    <tr><td>Cost per mile</td><td>Coût d'exploitation du camion par mile (fixe + variable)</td></tr>
+    <tr><td>Double brokering</td><td>Fraude : un faux broker revend un chargement et disparaît avec l'argent</td></tr>
+    <tr><td>Phantom reload</td><td>Fraude : rechargement « urgent » avec une identité clonée</td></tr>
+    <tr><td>FMCSA SAFER</td><td>Site officiel pour vérifier un MC/DOT number</td></tr>
     <tr><td>Team lead</td><td>Chef d'équipe de dispatchers</td></tr>
   </table>
 </section>
 
+<!-- PLAN -->
 <section class="video" id="plan">
   <h2>Plan sur 3 semaines (1 h à 1 h 30 par jour)</h2>
   <h3>Semaine 1 : comprendre le métier</h3>
@@ -300,6 +597,7 @@
     <li>Jour 5 : ajouter « Dispatch » à ton profil Upwork et chercher des offres de dispatcher junior ou assistant.</li>
     <li>Jours 6-7 : t'entraîner à une présentation de 60 secondes en anglais et à un appel de négociation avec un ami.</li>
   </ul>
+  <div class="note"><strong>Compléments :</strong> regarde les vidéos 8 à 12 en semaine 2 (jour 5) et en semaine 3 (jours 1-2), puis refais le quiz jusqu'à 90 %.</div>
   <div class="note"><strong>Règle d'or :</strong> l'anglais oral est la compétence clé. Chaque jour, répète à voix haute au moins un dialogue de broker.</div>
 </section>
 

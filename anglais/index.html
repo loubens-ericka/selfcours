@@ -86,6 +86,16 @@
   th{background:#eef2f7}
   details summary{cursor:pointer;font-weight:700;color:var(--acc)}
   footer{color:var(--mut);font-size:13px;padding:20px 20px 80px;text-align:center}
+  .foldbar{display:none;align-items:center;gap:10px;justify-content:space-between;color:#1b6e30;font-weight:700;font-size:14px;margin-bottom:6px}
+  section.done > .foldbar{display:flex}
+  .foldbar button{background:#e8f3ec;color:#1b6e30;border:1px solid #b2dfbe;border-radius:8px;padding:6px 12px;font-size:14px;font-weight:700;cursor:pointer}
+  section.folded{padding-top:12px!important;padding-bottom:12px!important}
+  section.folded > *:not(.foldbar):not(h2){display:none!important}
+  section.folded > h2{margin:0;font-size:17px;color:#5b6675}
+  .foldctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+  .foldctl label{font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px}
+  .foldctl input{width:18px;height:18px}
+  .resume{background:#40c057;color:#fff;border:0;border-radius:10px;padding:10px 16px;font-size:15px;font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
@@ -95,6 +105,7 @@
   <p>36 leçons en 5 modules : méthode et prononciation, expressions, entretien, grammaire et lectures à voix haute. Chaque leçon a un résumé, des phrases à écouter et à répéter, et un exercice. Ensuite : une simulation d'entretien, puis un quiz final avec certificat.</p>
   <div id="progtop"><span id="progtxt"></span><div class="bar"><i id="progbar"></i></div></div>
   <button class="hbtn" id="hbtn" onclick="gateQuiz()" style="display:none">Lancer le quiz final</button>
+  <div class="foldctl"><button class="resume" onclick="resumeCourse()">▶ Reprendre où j'en étais</button><label><input type="checkbox" id="foldtg" onchange="setFold(this.checked)"> Replier les cours terminés</label></div>
 </header>
 <main>
 
@@ -933,6 +944,21 @@ function makeCert(){
   const a=document.getElementById('certdl');a.href=url;a.style.display='inline-block';document.getElementById('certhint').style.display='block';
 }
 
+
+/* ---------- replier les cours terminés ---------- */
+const FOLDK='selfcours-fold',FOVR={};
+function foldOn(){return localStorage.getItem(FOLDK)!=='0'}
+function applyFold(list){
+  const tg=document.getElementById('foldtg');if(tg)tg.checked=foldOn();
+  list.forEach(s=>{let b=s.querySelector(':scope > .foldbar');
+    if(!b){b=document.createElement('div');b.className='foldbar';b.innerHTML='<span>✓ Cours terminé</span><button type="button"></button>';s.insertBefore(b,s.firstChild);
+      b.querySelector('button').onclick=()=>{FOVR[s.id]=!s.classList.contains('folded');applyFold([s]);if(!FOVR[s.id])s.scrollIntoView()}}
+    const f=s.classList.contains('done')&&(s.id in FOVR?FOVR[s.id]:foldOn());
+    s.classList.toggle('folded',f);b.querySelector('button').textContent=f?'Déplier ▾':'Replier ▴'});
+}
+function setFold(on){localStorage.setItem(FOLDK,on?'1':'0');for(const k in FOVR)delete FOVR[k];applyFold(lessons())}
+function resumeCourse(){const nx=lessons().find(s=>!s.classList.contains('done'));(nx||document.getElementById('quiz')).scrollIntoView()}
+const _ref=refresh;refresh=function(){_ref.apply(this,arguments);applyFold(lessons())};
 renderLessons();renderRevision();refresh();
 </script>
 </body>

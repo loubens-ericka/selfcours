@@ -45,12 +45,15 @@
   .score{font-size:20px;font-weight:700;margin:12px 0}
   .bar{height:8px;background:#e3e7ee;border-radius:6px;overflow:hidden;margin:8px 0}
   .bar i{display:block;height:100%;background:var(--acc);width:0}
+  .fab{position:fixed;right:16px;bottom:16px;z-index:50;background:#e8590c;color:#fff;border:0;border-radius:30px;padding:14px 22px;font-size:17px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.3);cursor:pointer}
+  .hbtn{display:inline-block;margin-top:14px;background:#e8590c;color:#fff;border:0;border-radius:10px;padding:12px 20px;font-size:16px;font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
 <header>
   <h1>Cours Dispatch Camions (USA)</h1>
   <p>17 vidéos (7 de la playlist + 10 compléments), chacune suivie de son résumé, des points à retenir, des phrases anglaises à répéter et des erreurs à éviter. Un quiz pour tester tes connaissances, puis glossaire et plan d'étude sur 3 semaines.</p>
+  <button class="hbtn" onclick="startQuiz(30)">Lancer le quiz</button>
 </header>
 <main>
 
@@ -823,6 +826,7 @@ function closeQuiz(){
 </section>
 
 </main>
+<button class="fab" onclick="startQuiz(30)">Quiz</button>
 <footer>Document d'étude personnel · vidéos © leurs auteurs sur YouTube</footer>
 </body>
 </html>
